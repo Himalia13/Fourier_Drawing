@@ -1,108 +1,117 @@
-# 🔬 Dynamic Systems Simulations
 
-This repository contains simulations and analyses of various dynamic systems in the field of physics, with MATLAB implementations and detailed documentation in PDF format.
+---
+
+# 🎨 Fourier Series Animations and Frame Extraction
+
+This repository contains Python scripts for creating animations of Fourier series using [Manim](https://github.com/ManimCommunity/manim) and extracting frames from the resulting videos using OpenCV. It combines mathematical visualization with video processing tools, ideal for educational purposes or creative projects.
 
 ## 📑 Table of Contents
 
 1. [Repository Structure](#-repository-structure)
 2. [Project Descriptions](#-project-descriptions)
-   - [Compound Double Pendulum](#1-compound-double-pendulum)
-   - [Particle connected to a spool](#2-particle-connected-to-a-spool)
-   - [Particle on oscillating loop](#3-particle-on-oscillating-loop)
+   - [Fourier Series Animations](#1-fourier-series-animations)
+   - [Video Frame Extraction](#2-video-frame-extraction)
 3. [How to Use](#-how-to-use)
 4. [Requirements](#%EF%B8%8F-requirements)
 5. [Download as .zip](#-download-as-zip)
 6. [Authors](#-authors)
-7. [Course Information](#-course-information)
-8. [Contribution](#-contribution)
-9. [License](#-license)
-
+7. [Contribution](#-contribution)
+8. [License](#-license)
 
 ## 📁 Repository Structure
 
 ```
 .
-|-- Compound Double Pendulum
-|   |-- code
-|   |   |-- main_exp.m
-|   |   |-- main_num.m
-|   |   |-- poncaire.mat
-|   |   |-- tracked_positions.mat
-|   |-- Compound Double Pendulum.pdf
-|
-|-- Particle connected to a spool
-|   |-- code
-|   |   |-- main.m
-|   |-- Particle connected to a spool.pdf
-|
-|-- Particle on oscillating loop
-|   |-- code
-|   |   |-- main.m
-|   |-- Particle on oscillating loop.pdf
+|-- assets
+|   |-- svg_images
+|   |   |-- text_Shown.svg
+|   |   |-- c_clef.svg
+|   |-- img.png
+|-- Fps                    # Generated folder for extracted frames
+|-- .gitignore
+|-- fourier.py             # Manim script for Fourier animations
+|-- extract_frames.py      # OpenCV script for frame extraction
 ```
 
 ## 📂 Project Descriptions
 
-### 1. Compound Double Pendulum
-**Description:** Simulation of a compound double pendulum, exploring chaotic trajectories and nonlinear dynamics.
+### 1. Fourier Series Animations
+**Description:** A collection of animations visualizing Fourier series, capable of drawing LaTeX symbols (e.g., `\Sigma`, `\tau`) and SVG paths (e.g., musical clefs) using rotating vectors and circles. Includes custom examples like `MySVGAnimation` with text overlays and gradients.
 
-- **Main Files:**
-  - `main_exp.m` - Code for double pendulum experiments.
-  - `main_num.m` - Numerical simulation of the pendulum.
-  - `poncaire.mat` - Poincaré map data.
-  - `tracked_positions.mat` - Tracked positions during the experiment.
-- **Document:** `Compound Double Pendulum.pdf` - Theoretical explanation and results analysis.
+- **Main File:**
+  - `fourier.py` - Core script with classes like `FourierCirclesScene`, `FourierOfTexSymbol`, and `MySVGAnimation`.
+- **Assets:**
+  - `assets/svg_images/text_Shown.svg` - Static SVG path for `MySVGAnimation`.
+  - `assets/svg_images/c_clef.svg` - Example SVG for clef animations.
+  - `img.png` - Image used in `MySVGAnimation` (e.g., "silly car").
 
-### 2. Particle connected to a spool
-**Description:** Simulation of a particle connected to a spool, analyzing the system's dynamics. 
+### 2. Video Frame Extraction
+**Description:** A utility script to extract individual frames from a Manim-generated MP4 video, saving them as PNG files for further analysis or use.
 
-- **Main Files:**
-  - `main.m` - Code for the numerical simulation.
-- **Document:** `Particle connected to a spool.pdf` - Theoretical description and simulations.
-
-### 3. Particle on oscillating loop
-**Description:** Analysis of a particle's movement on an oscillating loop, investigating trajectories and dynamic behavior.
-
-- **Main Files:**
-  - `main.m` - Code for the numerical simulation.
-- **Document:** `Particle on oscillating loop.pdf` - System analysis and graphics.
-
+- **Main File:**
+  - `extract_frames.py` - Script to process videos like `MySVGAnimation.mp4`.
+- **Output:**
+  - `Fps/` - Folder containing extracted frames (e.g., `frame_000001.png`).
 
 ## 🚀 How to Use
-1. Clone the repository:
-   ```bash
-   git clone git clone https://github.com/Himalia13/Applied-Mechanics-Laboratory-Sessions-from-Aerospace-Engineering-UC3M
-   ```
-2. Navigate to the project of interest and open the .m files in MATLAB to run the simulations.
 
-3. Review the PDFs to understand the theoretical framework and the results of each simulation.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/fourier-animations.git
+   ```
+   Replace `your-username` with your GitHub username.
+
+2. **Run Fourier Animations:**
+   - Install Manim (see [Requirements](#%EF%B8%8F-requirements)).
+   - Execute an animation, e.g.:
+     ```bash
+     manim -p fourier.py MySVGAnimation
+     ```
+   - Output video will be in `media/videos/`.
+
+3. **Extract Frames:**
+   - Update `video_path` in `extract_frames.py` to point to your video (e.g., `media/videos/eeQ4mbLj/1440p60/MySVGAnimation.mp4`).
+   - Run the script:
+     ```bash
+     python extract_frames.py
+     ```
+   - Frames will be saved in the `Fps/` folder.
 
 ## 🛠️ Requirements
-- MATLAB (Version 2020 or higher recommended)
 
-### 📦 Download as .zip
-If you prefer, you can download the entire repository as a .zip file:
+- **Python 3.8+**
+- **Manim Community Edition** (Install via `pip install manim` or follow [Manim docs](https://docs.manim.community/en/stable/installation.html)).
+- **OpenCV** (`pip install opencv-python`)
+- **Other Python dependencies** (e.g., `numpy`, included with Manim).
 
-1. Visit the repository page in GitHub.
+## 📦 Download as .zip
+
+If you prefer, download the repository as a .zip file:
+
+1. Visit the repository page on GitHub.
 2. Click the green **Code** button.
-3. Select **Download ZIP** and extract the contents to your local directory.
+3. Select **Download ZIP** and extract the contents locally.
 
 ## 👥 Authors
 
-Different laboratory sessions were completed by various student groups from the Aerospace Engineering program at UC3M, including:
 - Andrés Velázquez Vela
-- Alejandra Menéndez Lucini
-- Sofía Marín Puche
-
-## 📘 Course Information
-
-- **Institution**: Universidad Carlos III de Madrid (UC3M)
-- **Program**: Aerospace Engineering
-- **Course**: Fluid Mechanics
-- **Academic Year**: 2024
 
 ## 🤝 Contribution
-Contributions are welcome. If you want to add or improve a simulation, create a pull request or open an issue to discuss it.
+
+Contributions are welcome! Feel free to:
+- Add new animation examples to `fourier.py`.
+- Enhance frame extraction features in `extract_frames.py`.
+- Submit a pull request or open an issue to discuss improvements.
 
 ## 📄 License
+
 This project is free to use, modify, and distribute without restrictions.
+
+---
+
+### Notes:
+- I omitted "Course Information" since no specific academic context was provided, but you can add it if relevant (e.g., tying it to a UC3M course).
+- The `.gitignore` file is included in the structure based on your earlier request.
+- Replace `your-username` with your actual GitHub username when setting up the repo.
+- Adjust paths (e.g., `img.png`, SVG files) to match your local setup if they differ.
+
