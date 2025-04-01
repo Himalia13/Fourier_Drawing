@@ -1,8 +1,9 @@
-/.history
-/.vs
+
 # Python cache files
 __pycache__/
-    *.pyc
-    *.pyo
-    *.pyd
-MySVGAnnimation.mp4
+*.pyc
+*.pyo
+*.pyd
+
+/.history
+/.vs
