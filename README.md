@@ -108,10 +108,3 @@ Contributions are welcome! Feel free to:
 This project is free to use, modify, and distribute without restrictions.
 
 ---
-
-### Notes:
-- I omitted "Course Information" since no specific academic context was provided, but you can add it if relevant (e.g., tying it to a UC3M course).
-- The `.gitignore` file is included in the structure based on your earlier request.
-- Replace `your-username` with your actual GitHub username when setting up the repo.
-- Adjust paths (e.g., `img.png`, SVG files) to match your local setup if they differ.
-
